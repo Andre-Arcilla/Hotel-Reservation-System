@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2026 at 06:11 PM
+-- Generation Time: Mar 29, 2026 at 07:42 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,6 +42,15 @@ CREATE TABLE `reservations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `reservations`
+--
+
+INSERT INTO `reservations` (`id`, `ref_no`, `name`, `contact`, `email`, `room_capacity`, `room_type`, `checkin_date`, `checkout_date`, `total_bill`, `mop`) VALUES
+(30, 'SOGO-69C95EB7D89BE', 'aaa aaa', '123', 'aaa@aaa.com', 'Single', 'Regency', '2026-03-30', '2026-04-01', 200.00, 'Cash'),
+(31, 'SOGO-69C95F052D8B0', 'bbb bbb', '09671231234', 'aaa@aaa.com', 'Double', 'Deluxe', '2026-03-30', '2026-04-02', 1575.00, 'Check'),
+(32, 'SOGO-69C95FAEDA110', 'ccc ccc', '123', 'aaa@aaa.com', 'Family', 'Premium', '2026-03-30', '2026-03-31', 1100.00, 'Credit Card');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -59,7 +68,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
