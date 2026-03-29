@@ -176,600 +176,599 @@ $booking_tab = isset($_GET['tab']) ? $_GET['tab'] : 'pending';
     </style>
 </head>
 <body>
-
-<!-- ══ SIDEBAR ══ -->
-<aside class="sidebar">
-    <div class="logo-area">
-        <div class="logo-badge"><img style="width: 40px; height: 40px;" src="assets/sogo_logo.jpg" alt="Sogo Hotel Logo" srcset=""></div>
-        <div class="logo-text">
-            <span class="brand">Sogo Hotel</span>
-            <span class="sub">Admin Panel</span>
-        </div>
-    </div>
-    <nav class="nav-section">
-        <div class="nav-label">Main</div>
-        <a href="?page=dashboard" class="nav-link <?= $page=='dashboard'?'active':'' ?>">
-            <div class="nav-icon"><i class="fa-solid fa-table-cells-large"></i></div> Dashboard
-        </a>
-        <a href="?page=room" class="nav-link <?= $page=='room'?'active':'' ?>">
-            <div class="nav-icon"><i class="fa-solid fa-key"></i></div> Rooms
-        </a>
-        <a href="?page=guest" class="nav-link <?= $page=='guest'?'active':'' ?>">
-            <div class="nav-icon"><i class="fa-solid fa-user-group"></i></div> Guests
-        </a>
-        <a href="?page=booking" class="nav-link <?= $page=='booking'?'active':'' ?>">
-            <div class="nav-icon"><i class="fa-solid fa-calendar-days"></i></div> Bookings
-        </a>
-    </nav>
-    <!-- <div class="sidebar-footer">
-        <div class="user-pill">
-            <div class="user-avatar">AD</div>
-            <div class="user-info">
-                <div class="uname">Admin User</div>
-                <div class="urole">Super Admin</div>
+    <!-- ══ SIDEBAR ══ -->
+    <aside class="sidebar">
+        <div class="logo-area">
+            <div class="logo-badge"><img style="width: 40px; height: 40px;" src="assets/sogo_logo.jpg" alt="Sogo Hotel Logo" srcset=""></div>
+            <div class="logo-text">
+                <span class="brand">Sogo Hotel</span>
+                <span class="sub">Admin Panel</span>
             </div>
         </div>
-    </div> -->
-</aside>
-
-<!-- ══ MAIN ══ -->
-<main class="main-content">
-
-    <header class="top-bar">
-        <div class="breadcrumb">Admin / <span><?= ucfirst($page) ?></span></div>
-        <!-- <div>
-            <?php if($page=='room'): ?>
-                <button class="add-btn" onclick="openModal('modal-add-room')"><i class="fa-solid fa-plus"></i> Add Room</button>
-            <?php elseif($page=='guest'): ?>
-                <button class="add-btn" onclick="openModal('modal-add-guest')"><i class="fa-solid fa-plus"></i> Add Guest</button>
-            <?php elseif($page=='booking'): ?>
-                <button class="add-btn" onclick="openModal('modal-add-booking')"><i class="fa-solid fa-plus"></i> New Booking</button>
-            <?php endif; ?>
+        <nav class="nav-section">
+            <div class="nav-label">Main</div>
+            <a href="?page=dashboard" class="nav-link <?= $page=='dashboard'?'active':'' ?>">
+                <div class="nav-icon"><i class="fa-solid fa-table-cells-large"></i></div> Dashboard
+            </a>
+            <a href="?page=room" class="nav-link <?= $page=='room'?'active':'' ?>">
+                <div class="nav-icon"><i class="fa-solid fa-key"></i></div> Rooms
+            </a>
+            <a href="?page=guest" class="nav-link <?= $page=='guest'?'active':'' ?>">
+                <div class="nav-icon"><i class="fa-solid fa-user-group"></i></div> Guests
+            </a>
+            <a href="?page=booking" class="nav-link <?= $page=='booking'?'active':'' ?>">
+                <div class="nav-icon"><i class="fa-solid fa-calendar-days"></i></div> Bookings
+            </a>
+        </nav>
+        <!-- <div class="sidebar-footer">
+            <div class="user-pill">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <div class="uname">Admin User</div>
+                    <div class="urole">Super Admin</div>
+                </div>
+            </div>
         </div> -->
-    </header>
+    </aside>
 
-    <!-- ══════════ DASHBOARD ══════════ -->
-    <?php if($page=='dashboard'): ?>
-    <div class="page-area">
-        <div class="kpi-grid">
-            <div class="kpi-card">
+    <!-- ══ MAIN ══ -->
+    <main class="main-content">
+
+        <header class="top-bar">
+            <div class="breadcrumb">Admin / <span><?= ucfirst($page) ?></span></div>
+            <!-- <div>
+                <?php if($page=='room'): ?>
+                    <button class="add-btn" onclick="openModal('modal-add-room')"><i class="fa-solid fa-plus"></i> Add Room</button>
+                <?php elseif($page=='guest'): ?>
+                    <button class="add-btn" onclick="openModal('modal-add-guest')"><i class="fa-solid fa-plus"></i> Add Guest</button>
+                <?php elseif($page=='booking'): ?>
+                    <button class="add-btn" onclick="openModal('modal-add-booking')"><i class="fa-solid fa-plus"></i> New Booking</button>
+                <?php endif; ?>
+            </div> -->
+        </header>
+
+        <!-- ══════════ DASHBOARD ══════════ -->
+        <?php if($page=='dashboard'): ?>
+        <div class="page-area">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div>
+                        <div class="kpi-label">Pending Reservations</div>
+                        <div class="kpi-value">10</div>
+                        <div class="kpi-sub">+3 from yesterday</div>
+                    </div>
+                    <div class="kpi-icon-wrap"><i class="fa-regular fa-calendar-check" style="color:var(--red)"></i></div>
+                </div>
+                <div class="kpi-card">
+                    <div>
+                        <div class="kpi-label">Total Guests</div>
+                        <div class="kpi-value">10</div>
+                        <div class="kpi-sub">1 checked in today</div>
+                    </div>
+                    <div class="kpi-icon-wrap"><i class="fa-solid fa-user-group" style="color:#4A5568"></i></div>
+                </div>
+                <div class="kpi-card">
+                    <div>
+                        <div class="kpi-label">Rooms Available</div>
+                        <div class="kpi-value">10</div>
+                        <div class="kpi-sub">Out of 30 total</div>
+                    </div>
+                    <div class="kpi-icon-wrap"><i class="fa-solid fa-bed" style="color:#059669"></i></div>
+                </div>
+            </div>
+
+            <div class="dash-row">
                 <div>
-                    <div class="kpi-label">Pending Reservations</div>
-                    <div class="kpi-value">10</div>
-                    <div class="kpi-sub">+3 from yesterday</div>
+                    <div class="section-title">Room Utilization</div>
+                    <div class="activity-card">
+                        <div class="activity-title">Occupancy Overview</div>
+                        <div class="occ-bar-wrap">
+                            <div class="occ-label"><span>Regency</span><span class="pct">67%</span></div>
+                            <div class="occ-bar"><div class="occ-fill fill-red" style="width:67%"></div></div>
+                        </div>
+                        <div class="occ-bar-wrap">
+                            <div class="occ-label"><span>Deluxe</span><span class="pct">48%</span></div>
+                            <div class="occ-bar"><div class="occ-fill fill-green" style="width:48%"></div></div>
+                        </div>
+                        <div class="occ-bar-wrap" style="margin-bottom:0">
+                            <div class="occ-label"><span>Premium</span><span class="pct">82%</span></div>
+                            <div class="occ-bar"><div class="occ-fill fill-amber" style="width:82%"></div></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="kpi-icon-wrap"><i class="fa-regular fa-calendar-check" style="color:var(--red)"></i></div>
-            </div>
-            <div class="kpi-card">
+
                 <div>
-                    <div class="kpi-label">Total Guests</div>
-                    <div class="kpi-value">10</div>
-                    <div class="kpi-sub">1 checked in today</div>
-                </div>
-                <div class="kpi-icon-wrap"><i class="fa-solid fa-user-group" style="color:#4A5568"></i></div>
-            </div>
-            <div class="kpi-card">
-                <div>
-                    <div class="kpi-label">Rooms Available</div>
-                    <div class="kpi-value">10</div>
-                    <div class="kpi-sub">Out of 30 total</div>
-                </div>
-                <div class="kpi-icon-wrap"><i class="fa-solid fa-bed" style="color:#059669"></i></div>
-            </div>
-        </div>
-
-        <div class="dash-row">
-            <div>
-                <div class="section-title">Room Utilization</div>
-                <div class="activity-card">
-                    <div class="activity-title">Occupancy Overview</div>
-                    <div class="occ-bar-wrap">
-                        <div class="occ-label"><span>Regency</span><span class="pct">67%</span></div>
-                        <div class="occ-bar"><div class="occ-fill fill-red" style="width:67%"></div></div>
-                    </div>
-                    <div class="occ-bar-wrap">
-                        <div class="occ-label"><span>Deluxe</span><span class="pct">48%</span></div>
-                        <div class="occ-bar"><div class="occ-fill fill-green" style="width:48%"></div></div>
-                    </div>
-                    <div class="occ-bar-wrap" style="margin-bottom:0">
-                        <div class="occ-label"><span>Premium</span><span class="pct">82%</span></div>
-                        <div class="occ-bar"><div class="occ-fill fill-amber" style="width:82%"></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div class="section-title">Notifications</div>
-                <div class="notif-card">
-                    <div class="notif-header">
-                        <div class="notif-header-title">Recent Alerts</div>
-                        <span class="notif-count" id="notif-badge">3 new</span>
-                    </div>
-                    <div class="notif-list">
-                        <div class="notif-item unread" onclick="markRead(this)">
-                            <div class="ndot"></div>
-                            <div>
-                                <div class="notif-msg">New booking from Benjamin — Deluxe room</div>
-                                <div class="notif-time">2 minutes ago</div>
-                            </div>
+                    <div class="section-title">Notifications</div>
+                    <div class="notif-card">
+                        <div class="notif-header">
+                            <div class="notif-header-title">Recent Alerts</div>
+                            <span class="notif-count" id="notif-badge">3 new</span>
                         </div>
-                        <div class="notif-item unread" onclick="markRead(this)">
-                            <div class="ndot"></div>
-                            <div>
-                                <div class="notif-msg">Diddy's reservation needs approval</div>
-                                <div class="notif-time">15 minutes ago</div>
+                        <div class="notif-list">
+                            <div class="notif-item unread" onclick="markRead(this)">
+                                <div class="ndot"></div>
+                                <div>
+                                    <div class="notif-msg">New booking from Benjamin — Deluxe room</div>
+                                    <div class="notif-time">2 minutes ago</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="notif-item unread" onclick="markRead(this)">
-                            <div class="ndot"></div>
-                            <div>
-                                <div class="notif-msg">Premium room flagged for maintenance</div>
-                                <div class="notif-time">1 hour ago</div>
+                            <div class="notif-item unread" onclick="markRead(this)">
+                                <div class="ndot"></div>
+                                <div>
+                                    <div class="notif-msg">Diddy's reservation needs approval</div>
+                                    <div class="notif-time">15 minutes ago</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="notif-item" onclick="markRead(this)">
-                            <div class="ndot read"></div>
-                            <div>
-                                <div class="notif-msg">Charlie checked out of Room 105</div>
-                                <div class="notif-time">3 hours ago</div>
+                            <div class="notif-item unread" onclick="markRead(this)">
+                                <div class="ndot"></div>
+                                <div>
+                                    <div class="notif-msg">Premium room flagged for maintenance</div>
+                                    <div class="notif-time">1 hour ago</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="notif-item" onclick="markRead(this)">
-                            <div class="ndot read"></div>
-                            <div>
-                                <div class="notif-msg">Daily occupancy report generated</div>
-                                <div class="notif-time">Yesterday</div>
+                            <div class="notif-item" onclick="markRead(this)">
+                                <div class="ndot read"></div>
+                                <div>
+                                    <div class="notif-msg">Charlie checked out of Room 105</div>
+                                    <div class="notif-time">3 hours ago</div>
+                                </div>
+                            </div>
+                            <div class="notif-item" onclick="markRead(this)">
+                                <div class="ndot read"></div>
+                                <div>
+                                    <div class="notif-msg">Daily occupancy report generated</div>
+                                    <div class="notif-time">Yesterday</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- ══════════ ROOMS ══════════ -->
+        <?php elseif($page=='room'): ?>
+        <div class="page-area">
+            <div class="section-title">Room Categories</div>
+            <div class="list-stack">
+
+                <div class="acc-item" id="acc-regency">
+                    <div class="acc-header" onclick="toggleAcc('acc-regency')">
+                        <div class="acc-left">
+                            <div class="list-avatar av-red">RG</div>
+                            <div><div class="list-name">Regency</div><div class="list-meta">8 rooms · ₱2,500/hr</div></div>
+                        </div>
+                        <div class="acc-right">
+                            <span class="list-badge badge-available">Available</span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </div>
+                    </div>
+                    <div class="acc-body"><div class="acc-inner">
+                        <div class="detail-grid">
+                            <div class="detail-field"><label>Room Type</label><p>Standard Double</p></div>
+                            <div class="detail-field"><label>Floor</label><p>2nd – 3rd Floor</p></div>
+                            <div class="detail-field"><label>Rate per hour</label><p>₱2,500</p></div>
+                            <div class="detail-field"><label>Max Guests</label><p>2 persons</p></div>
+                            <div class="detail-field"><label>Bed Type</label><p>Queen Bed</p></div>
+                            <div class="detail-field"><label>Status</label><p style="color:#059669;font-weight:700;">Available</p></div>
+                            <div class="detail-field col-full"><label>Description</label><p>A cozy standard room with modern amenities, complimentary toiletries, air conditioning, flat-screen TV, and free Wi-Fi. Ideal for solo travelers or couples looking for a comfortable short stay.</p></div>
+                        </div>
+                        <div class="acc-actions">
+                            <button class="btn-edit" onclick="openEditRoom('Regency','Standard Double','2500','2','Queen Bed','Available','A cozy standard room with modern amenities, complimentary toiletries, air conditioning, flat-screen TV, and free Wi-Fi. Ideal for solo travelers or couples looking for a comfortable short stay.')">
+                                <i class="fa-solid fa-pen"></i> Edit Room
+                            </button>
+                            <button class="btn-ghost" onclick="toggleAcc('acc-regency')">Close</button>
+                        </div>
+                    </div></div>
+                </div>
+
+                <div class="acc-item" id="acc-deluxe">
+                    <div class="acc-header" onclick="toggleAcc('acc-deluxe')">
+                        <div class="acc-left">
+                            <div class="list-avatar av-slate">DX</div>
+                            <div><div class="list-name">Deluxe</div><div class="list-meta">12 rooms · ₱3,500/hr</div></div>
+                        </div>
+                        <div class="acc-right">
+                            <span class="list-badge badge-occupied">Occupied</span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </div>
+                    </div>
+                    <div class="acc-body"><div class="acc-inner">
+                        <div class="detail-grid">
+                            <div class="detail-field"><label>Room Type</label><p>Superior Room</p></div>
+                            <div class="detail-field"><label>Floor</label><p>4th – 6th Floor</p></div>
+                            <div class="detail-field"><label>Rate per hour</label><p>₱3,500</p></div>
+                            <div class="detail-field"><label>Max Guests</label><p>3 persons</p></div>
+                            <div class="detail-field"><label>Bed Type</label><p>King Bed</p></div>
+                            <div class="detail-field"><label>Status</label><p style="color:#DC2626;font-weight:700;">Occupied</p></div>
+                            <div class="detail-field col-full"><label>Description</label><p>A spacious superior room featuring a king-size bed, mini-bar, soaking tub, and panoramic city views. Perfect for guests seeking extra comfort and privacy during their stay.</p></div>
+                        </div>
+                        <div class="acc-actions">
+                            <button class="btn-edit" onclick="openEditRoom('Deluxe','Superior Room','3500','3','King Bed','Occupied','A spacious superior room featuring a king-size bed, mini-bar, soaking tub, and panoramic city views. Perfect for guests seeking extra comfort and privacy during their stay.')">
+                                <i class="fa-solid fa-pen"></i> Edit Room
+                            </button>
+                            <button class="btn-ghost" onclick="toggleAcc('acc-deluxe')">Close</button>
+                        </div>
+                    </div></div>
+                </div>
+
+                <div class="acc-item" id="acc-premium">
+                    <div class="acc-header" onclick="toggleAcc('acc-premium')">
+                        <div class="acc-left">
+                            <div class="list-avatar av-teal">PM</div>
+                            <div><div class="list-name">Premium</div><div class="list-meta">6 rooms · ₱5,000/hr</div></div>
+                        </div>
+                        <div class="acc-right">
+                            <span class="list-badge badge-maintenance">Maintenance</span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </div>
+                    </div>
+                    <div class="acc-body"><div class="acc-inner">
+                        <div class="detail-grid">
+                            <div class="detail-field"><label>Room Type</label><p>Executive Suite</p></div>
+                            <div class="detail-field"><label>Floor</label><p>7th – 8th Floor</p></div>
+                            <div class="detail-field"><label>Rate per hour</label><p>₱5,000</p></div>
+                            <div class="detail-field"><label>Max Guests</label><p>4 persons</p></div>
+                            <div class="detail-field"><label>Bed Type</label><p>Twin King Beds</p></div>
+                            <div class="detail-field"><label>Status</label><p style="color:#D97706;font-weight:700;">Under Maintenance</p></div>
+                            <div class="detail-field col-full"><label>Description</label><p>Our top-tier executive suite with a private living area, jacuzzi, premium bath amenities, and a dedicated concierge. The ultimate luxury experience for distinguished guests.</p></div>
+                        </div>
+                        <div class="acc-actions">
+                            <button class="btn-edit" onclick="openEditRoom('Premium','Executive Suite','5000','4','Twin King Beds','Maintenance','Our top-tier executive suite with a private living area, jacuzzi, premium bath amenities, and a dedicated concierge. The ultimate luxury experience for distinguished guests.')">
+                                <i class="fa-solid fa-pen"></i> Edit Room
+                            </button>
+                            <button class="btn-ghost" onclick="toggleAcc('acc-premium')">Close</button>
+                        </div>
+                    </div></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══════════ GUESTS ══════════ -->
+        <?php elseif($page=='guest'): ?>
+        <div class="page-area">
+            <div class="section-title">Guest List</div>
+            <div class="list-stack">
+
+                <div class="acc-item" id="acc-benjamin">
+                    <div class="acc-header" onclick="toggleAcc('acc-benjamin')">
+                        <div class="acc-left">
+                            <div class="list-avatar av-amber">BJ</div>
+                            <div><div class="list-name">Benjamin Cruz</div><div class="list-meta">Room 204 · Deluxe</div></div>
+                        </div>
+                        <div class="acc-right">
+                            <span class="list-badge badge-available">Checked In</span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </div>
+                    </div>
+                    <div class="acc-body"><div class="acc-inner">
+                        <div class="detail-grid">
+                            <div class="detail-field"><label>Full Name</label><p>Benjamin Cruz</p></div>
+                            <div class="detail-field"><label>Room</label><p>Room 204 — Deluxe</p></div>
+                            <div class="detail-field"><label>Contact Number</label><p>+63 917 123 4567</p></div>
+                            <div class="detail-field"><label>Email</label><p>benjamin@email.com</p></div>
+                            <div class="detail-field"><label>Check-in</label><p>March 28, 2026 · 2:00 PM</p></div>
+                            <div class="detail-field"><label>Check-out</label><p>March 29, 2026 · 12:00 PM</p></div>
+                            <div class="detail-field"><label>Valid ID</label><p>Driver's License</p></div>
+                            <div class="detail-field"><label>Status</label><p style="color:#059669;font-weight:700;">Checked In</p></div>
+                        </div>
+                        <div class="acc-actions">
+                            <button class="btn-ghost" onclick="toggleAcc('acc-benjamin')">Close</button>
+                        </div>
+                    </div></div>
+                </div>
+
+                <div class="acc-item" id="acc-diddy">
+                    <div class="acc-header" onclick="toggleAcc('acc-diddy')">
+                        <div class="acc-left">
+                            <div class="list-avatar av-slate">DD</div>
+                            <div><div class="list-name">Diddy Santos</div><div class="list-meta">Room 311 · Premium</div></div>
+                        </div>
+                        <div class="acc-right">
+                            <span class="list-badge badge-pending">Pending</span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </div>
+                    </div>
+                    <div class="acc-body"><div class="acc-inner">
+                        <div class="detail-grid">
+                            <div class="detail-field"><label>Full Name</label><p>Diddy Santos</p></div>
+                            <div class="detail-field"><label>Room</label><p>Room 311 — Premium</p></div>
+                            <div class="detail-field"><label>Contact Number</label><p>+63 918 765 4321</p></div>
+                            <div class="detail-field"><label>Email</label><p>diddy@email.com</p></div>
+                            <div class="detail-field"><label>Check-in</label><p>March 30, 2026 · 3:00 PM</p></div>
+                            <div class="detail-field"><label>Check-out</label><p>April 1, 2026 · 12:00 PM</p></div>
+                            <div class="detail-field"><label>Valid ID</label><p>Passport</p></div>
+                            <div class="detail-field"><label>Status</label><p style="color:#C2410C;font-weight:700;">Pending Arrival</p></div>
+                        </div>
+                        <div class="acc-actions">
+                            <button class="btn-ghost" onclick="toggleAcc('acc-diddy')">Close</button>
+                        </div>
+                    </div></div>
+                </div>
+
+                <div class="acc-item" id="acc-charlie">
+                    <div class="acc-header" onclick="toggleAcc('acc-charlie')">
+                        <div class="acc-left">
+                            <div class="list-avatar av-teal">CL</div>
+                            <div><div class="list-name">Charlie Reyes</div><div class="list-meta">Room 105 · Regency</div></div>
+                        </div>
+                        <div class="acc-right">
+                            <span class="list-badge badge-occupied">Checked Out</span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </div>
+                    </div>
+                    <div class="acc-body"><div class="acc-inner">
+                        <div class="detail-grid">
+                            <div class="detail-field"><label>Full Name</label><p>Charlie Reyes</p></div>
+                            <div class="detail-field"><label>Room</label><p>Room 105 — Regency</p></div>
+                            <div class="detail-field"><label>Contact Number</label><p>+63 916 555 9988</p></div>
+                            <div class="detail-field"><label>Email</label><p>charlie@email.com</p></div>
+                            <div class="detail-field"><label>Check-in</label><p>March 27, 2026 · 1:00 PM</p></div>
+                            <div class="detail-field"><label>Check-out</label><p>March 28, 2026 · 11:00 AM</p></div>
+                            <div class="detail-field"><label>Valid ID</label><p>National ID</p></div>
+                            <div class="detail-field"><label>Status</label><p style="color:#DC2626;font-weight:700;">Checked Out</p></div>
+                        </div>
+                        <div class="acc-actions">
+                            <button class="btn-ghost" onclick="toggleAcc('acc-charlie')">Close</button>
+                        </div>
+                    </div></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══════════ BOOKINGS ══════════ -->
+        <?php elseif($page=='booking'): ?>
+        <div class="page-area">
+            <div class="booking-tabs-row">
+                <?php $tabs=['pending'=>'Pending','approve'=>'Approved','canceled'=>'Canceled','history'=>'History'];
+                foreach($tabs as $k=>$l): ?>
+                <a href="?page=booking&tab=<?=$k?>" class="b-tab <?= $booking_tab==$k?'active':'' ?>"><?=$l?></a>
+                <?php endforeach; ?>
+            </div>
+            <div class="section-title"><?= ucfirst($booking_tab) ?> Bookings</div>
+            <div class="list-stack">
+
+                <div class="acc-item" id="acc-bk1">
+                    <div class="acc-header" onclick="toggleAcc('acc-bk1')">
+                        <div class="acc-left">
+                            <div class="list-avatar av-amber">BJ</div>
+                            <div><div class="list-name">Benjamin Cruz</div><div class="list-meta">Deluxe · Mar 28 – Mar 29</div></div>
+                        </div>
+                        <div class="acc-right">
+                            <span class="list-badge badge-<?= $booking_tab ?>"><?= ucfirst($booking_tab) ?></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </div>
+                    </div>
+                    <div class="acc-body"><div class="acc-inner">
+                        <div class="detail-grid">
+                            <div class="detail-field"><label>Guest Name</label><p>Benjamin Cruz</p></div>
+                            <div class="detail-field"><label>Booking No.</label><p>BK-2026-0041</p></div>
+                            <div class="detail-field"><label>Room Type</label><p>Deluxe — Room 204</p></div>
+                            <div class="detail-field"><label>Duration</label><p>1 night</p></div>
+                            <div class="detail-field"><label>Check-in</label><p>March 28, 2026 · 2:00 PM</p></div>
+                            <div class="detail-field"><label>Check-out</label><p>March 29, 2026 · 12:00 PM</p></div>
+                            <div class="detail-field"><label>Total Amount</label><p style="color:var(--red);font-weight:700;">₱3,500.00</p></div>
+                            <div class="detail-field"><label>Payment</label><p>Cash on arrival</p></div>
+                        </div>
+                        <div class="acc-actions">
+                            <button class="btn-ghost" onclick="toggleAcc('acc-bk1')">Close</button>
+                        </div>
+                    </div></div>
+                </div>
+
+                <div class="acc-item" id="acc-bk2">
+                    <div class="acc-header" onclick="toggleAcc('acc-bk2')">
+                        <div class="acc-left">
+                            <div class="list-avatar av-slate">DD</div>
+                            <div><div class="list-name">Diddy Santos</div><div class="list-meta">Premium · Mar 30 – Apr 1</div></div>
+                        </div>
+                        <div class="acc-right">
+                            <span class="list-badge badge-<?= $booking_tab ?>"><?= ucfirst($booking_tab) ?></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </div>
+                    </div>
+                    <div class="acc-body"><div class="acc-inner">
+                        <div class="detail-grid">
+                            <div class="detail-field"><label>Guest Name</label><p>Diddy Santos</p></div>
+                            <div class="detail-field"><label>Booking No.</label><p>BK-2026-0042</p></div>
+                            <div class="detail-field"><label>Room Type</label><p>Premium — Room 311</p></div>
+                            <div class="detail-field"><label>Duration</label><p>2 nights</p></div>
+                            <div class="detail-field"><label>Check-in</label><p>March 30, 2026 · 3:00 PM</p></div>
+                            <div class="detail-field"><label>Check-out</label><p>April 1, 2026 · 12:00 PM</p></div>
+                            <div class="detail-field"><label>Total Amount</label><p style="color:var(--red);font-weight:700;">₱10,000.00</p></div>
+                            <div class="detail-field"><label>Payment</label><p>GCash</p></div>
+                        </div>
+                        <div class="acc-actions">
+                            <button class="btn-ghost" onclick="toggleAcc('acc-bk2')">Close</button>
+                        </div>
+                    </div></div>
+                </div>
+
+                <div class="acc-item" id="acc-bk3">
+                    <div class="acc-header" onclick="toggleAcc('acc-bk3')">
+                        <div class="acc-left">
+                            <div class="list-avatar av-teal">CL</div>
+                            <div><div class="list-name">Charlie Reyes</div><div class="list-meta">Regency · Apr 2 – Apr 3</div></div>
+                        </div>
+                        <div class="acc-right">
+                            <span class="list-badge badge-<?= $booking_tab ?>"><?= ucfirst($booking_tab) ?></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </div>
+                    </div>
+                    <div class="acc-body"><div class="acc-inner">
+                        <div class="detail-grid">
+                            <div class="detail-field"><label>Guest Name</label><p>Charlie Reyes</p></div>
+                            <div class="detail-field"><label>Booking No.</label><p>BK-2026-0043</p></div>
+                            <div class="detail-field"><label>Room Type</label><p>Regency — Room 105</p></div>
+                            <div class="detail-field"><label>Duration</label><p>1 night</p></div>
+                            <div class="detail-field"><label>Check-in</label><p>April 2, 2026 · 2:00 PM</p></div>
+                            <div class="detail-field"><label>Check-out</label><p>April 3, 2026 · 12:00 PM</p></div>
+                            <div class="detail-field"><label>Total Amount</label><p style="color:var(--red);font-weight:700;">₱2,500.00</p></div>
+                            <div class="detail-field"><label>Payment</label><p>Credit Card</p></div>
+                        </div>
+                        <div class="acc-actions">
+                            <button class="btn-ghost" onclick="toggleAcc('acc-bk3')">Close</button>
+                        </div>
+                    </div></div>
+                </div>
+
+            </div>
+        </div>
+        <?php endif; ?>
+
+    </main>
+
+    <!-- ══ MODAL: Edit Room ══ -->
+    <div class="modal-overlay" id="modal-edit-room" onclick="closeOnOverlay(event,'modal-edit-room')">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Edit Room</div>
+                <button class="modal-close" onclick="closeModal('modal-edit-room')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="form-group"><label>Category Name</label><input class="form-input" id="er-name" type="text"></div>
+            <div class="form-row">
+                <div class="form-group"><label>Room Type</label><input class="form-input" id="er-type" type="text"></div>
+                <div class="form-group"><label>Rate (₱/hr)</label><input class="form-input" id="er-rate" type="text"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Max Guests</label><input class="form-input" id="er-guests" type="number"></div>
+                <div class="form-group"><label>Bed Type</label><input class="form-input" id="er-bed" type="text"></div>
+            </div>
+            <div class="form-group"><label>Status</label>
+                <select class="form-input" id="er-status">
+                    <option>Available</option><option>Occupied</option><option>Maintenance</option>
+                </select>
+            </div>
+            <div class="form-group"><label>Description</label><textarea class="form-input" id="er-desc"></textarea></div>
+            <div class="modal-footer">
+                <button class="btn-ghost" onclick="closeModal('modal-edit-room')">Cancel</button>
+                <button class="btn-edit" onclick="saveRoom()"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+            </div>
+        </div>
     </div>
 
-    <!-- ══════════ ROOMS ══════════ -->
-    <?php elseif($page=='room'): ?>
-    <div class="page-area">
-        <div class="section-title">Room Categories</div>
-        <div class="list-stack">
-
-            <div class="acc-item" id="acc-regency">
-                <div class="acc-header" onclick="toggleAcc('acc-regency')">
-                    <div class="acc-left">
-                        <div class="list-avatar av-red">RG</div>
-                        <div><div class="list-name">Regency</div><div class="list-meta">8 rooms · ₱2,500/hr</div></div>
-                    </div>
-                    <div class="acc-right">
-                        <span class="list-badge badge-available">Available</span>
-                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                    </div>
-                </div>
-                <div class="acc-body"><div class="acc-inner">
-                    <div class="detail-grid">
-                        <div class="detail-field"><label>Room Type</label><p>Standard Double</p></div>
-                        <div class="detail-field"><label>Floor</label><p>2nd – 3rd Floor</p></div>
-                        <div class="detail-field"><label>Rate per hour</label><p>₱2,500</p></div>
-                        <div class="detail-field"><label>Max Guests</label><p>2 persons</p></div>
-                        <div class="detail-field"><label>Bed Type</label><p>Queen Bed</p></div>
-                        <div class="detail-field"><label>Status</label><p style="color:#059669;font-weight:700;">Available</p></div>
-                        <div class="detail-field col-full"><label>Description</label><p>A cozy standard room with modern amenities, complimentary toiletries, air conditioning, flat-screen TV, and free Wi-Fi. Ideal for solo travelers or couples looking for a comfortable short stay.</p></div>
-                    </div>
-                    <div class="acc-actions">
-                        <button class="btn-edit" onclick="openEditRoom('Regency','Standard Double','2500','2','Queen Bed','Available','A cozy standard room with modern amenities, complimentary toiletries, air conditioning, flat-screen TV, and free Wi-Fi. Ideal for solo travelers or couples looking for a comfortable short stay.')">
-                            <i class="fa-solid fa-pen"></i> Edit Room
-                        </button>
-                        <button class="btn-ghost" onclick="toggleAcc('acc-regency')">Close</button>
-                    </div>
-                </div></div>
+    <!-- ══ MODAL: Add Room ══ -->
+    <div class="modal-overlay" id="modal-add-room" onclick="closeOnOverlay(event,'modal-add-room')">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Add New Room</div>
+                <button class="modal-close" onclick="closeModal('modal-add-room')"><i class="fa-solid fa-xmark"></i></button>
             </div>
-
-            <div class="acc-item" id="acc-deluxe">
-                <div class="acc-header" onclick="toggleAcc('acc-deluxe')">
-                    <div class="acc-left">
-                        <div class="list-avatar av-slate">DX</div>
-                        <div><div class="list-name">Deluxe</div><div class="list-meta">12 rooms · ₱3,500/hr</div></div>
-                    </div>
-                    <div class="acc-right">
-                        <span class="list-badge badge-occupied">Occupied</span>
-                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                    </div>
-                </div>
-                <div class="acc-body"><div class="acc-inner">
-                    <div class="detail-grid">
-                        <div class="detail-field"><label>Room Type</label><p>Superior Room</p></div>
-                        <div class="detail-field"><label>Floor</label><p>4th – 6th Floor</p></div>
-                        <div class="detail-field"><label>Rate per hour</label><p>₱3,500</p></div>
-                        <div class="detail-field"><label>Max Guests</label><p>3 persons</p></div>
-                        <div class="detail-field"><label>Bed Type</label><p>King Bed</p></div>
-                        <div class="detail-field"><label>Status</label><p style="color:#DC2626;font-weight:700;">Occupied</p></div>
-                        <div class="detail-field col-full"><label>Description</label><p>A spacious superior room featuring a king-size bed, mini-bar, soaking tub, and panoramic city views. Perfect for guests seeking extra comfort and privacy during their stay.</p></div>
-                    </div>
-                    <div class="acc-actions">
-                        <button class="btn-edit" onclick="openEditRoom('Deluxe','Superior Room','3500','3','King Bed','Occupied','A spacious superior room featuring a king-size bed, mini-bar, soaking tub, and panoramic city views. Perfect for guests seeking extra comfort and privacy during their stay.')">
-                            <i class="fa-solid fa-pen"></i> Edit Room
-                        </button>
-                        <button class="btn-ghost" onclick="toggleAcc('acc-deluxe')">Close</button>
-                    </div>
-                </div></div>
+            <div class="form-group"><label>Category Name</label><input class="form-input" type="text" placeholder="e.g. Suite"></div>
+            <div class="form-row">
+                <div class="form-group"><label>Room Type</label><input class="form-input" type="text" placeholder="e.g. Penthouse"></div>
+                <div class="form-group"><label>Rate (₱/hr)</label><input class="form-input" type="text" placeholder="7500"></div>
             </div>
-
-            <div class="acc-item" id="acc-premium">
-                <div class="acc-header" onclick="toggleAcc('acc-premium')">
-                    <div class="acc-left">
-                        <div class="list-avatar av-teal">PM</div>
-                        <div><div class="list-name">Premium</div><div class="list-meta">6 rooms · ₱5,000/hr</div></div>
-                    </div>
-                    <div class="acc-right">
-                        <span class="list-badge badge-maintenance">Maintenance</span>
-                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                    </div>
-                </div>
-                <div class="acc-body"><div class="acc-inner">
-                    <div class="detail-grid">
-                        <div class="detail-field"><label>Room Type</label><p>Executive Suite</p></div>
-                        <div class="detail-field"><label>Floor</label><p>7th – 8th Floor</p></div>
-                        <div class="detail-field"><label>Rate per hour</label><p>₱5,000</p></div>
-                        <div class="detail-field"><label>Max Guests</label><p>4 persons</p></div>
-                        <div class="detail-field"><label>Bed Type</label><p>Twin King Beds</p></div>
-                        <div class="detail-field"><label>Status</label><p style="color:#D97706;font-weight:700;">Under Maintenance</p></div>
-                        <div class="detail-field col-full"><label>Description</label><p>Our top-tier executive suite with a private living area, jacuzzi, premium bath amenities, and a dedicated concierge. The ultimate luxury experience for distinguished guests.</p></div>
-                    </div>
-                    <div class="acc-actions">
-                        <button class="btn-edit" onclick="openEditRoom('Premium','Executive Suite','5000','4','Twin King Beds','Maintenance','Our top-tier executive suite with a private living area, jacuzzi, premium bath amenities, and a dedicated concierge. The ultimate luxury experience for distinguished guests.')">
-                            <i class="fa-solid fa-pen"></i> Edit Room
-                        </button>
-                        <button class="btn-ghost" onclick="toggleAcc('acc-premium')">Close</button>
-                    </div>
-                </div></div>
+            <div class="form-row">
+                <div class="form-group"><label>Max Guests</label><input class="form-input" type="number" placeholder="2"></div>
+                <div class="form-group"><label>Bed Type</label><input class="form-input" type="text" placeholder="e.g. King Bed"></div>
             </div>
-
+            <div class="form-group"><label>Description</label><textarea class="form-input" placeholder="Describe this room category..."></textarea></div>
+            <div class="modal-footer">
+                <button class="btn-ghost" onclick="closeModal('modal-add-room')">Cancel</button>
+                <button class="btn-edit"><i class="fa-solid fa-plus"></i> Add Room</button>
+            </div>
         </div>
     </div>
 
-    <!-- ══════════ GUESTS ══════════ -->
-    <?php elseif($page=='guest'): ?>
-    <div class="page-area">
-        <div class="section-title">Guest List</div>
-        <div class="list-stack">
-
-            <div class="acc-item" id="acc-benjamin">
-                <div class="acc-header" onclick="toggleAcc('acc-benjamin')">
-                    <div class="acc-left">
-                        <div class="list-avatar av-amber">BJ</div>
-                        <div><div class="list-name">Benjamin Cruz</div><div class="list-meta">Room 204 · Deluxe</div></div>
-                    </div>
-                    <div class="acc-right">
-                        <span class="list-badge badge-available">Checked In</span>
-                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                    </div>
-                </div>
-                <div class="acc-body"><div class="acc-inner">
-                    <div class="detail-grid">
-                        <div class="detail-field"><label>Full Name</label><p>Benjamin Cruz</p></div>
-                        <div class="detail-field"><label>Room</label><p>Room 204 — Deluxe</p></div>
-                        <div class="detail-field"><label>Contact Number</label><p>+63 917 123 4567</p></div>
-                        <div class="detail-field"><label>Email</label><p>benjamin@email.com</p></div>
-                        <div class="detail-field"><label>Check-in</label><p>March 28, 2026 · 2:00 PM</p></div>
-                        <div class="detail-field"><label>Check-out</label><p>March 29, 2026 · 12:00 PM</p></div>
-                        <div class="detail-field"><label>Valid ID</label><p>Driver's License</p></div>
-                        <div class="detail-field"><label>Status</label><p style="color:#059669;font-weight:700;">Checked In</p></div>
-                    </div>
-                    <div class="acc-actions">
-                        <button class="btn-ghost" onclick="toggleAcc('acc-benjamin')">Close</button>
-                    </div>
-                </div></div>
+    <!-- ══ MODAL: Add Guest ══ -->
+    <div class="modal-overlay" id="modal-add-guest" onclick="closeOnOverlay(event,'modal-add-guest')">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Add New Guest</div>
+                <button class="modal-close" onclick="closeModal('modal-add-guest')"><i class="fa-solid fa-xmark"></i></button>
             </div>
-
-            <div class="acc-item" id="acc-diddy">
-                <div class="acc-header" onclick="toggleAcc('acc-diddy')">
-                    <div class="acc-left">
-                        <div class="list-avatar av-slate">DD</div>
-                        <div><div class="list-name">Diddy Santos</div><div class="list-meta">Room 311 · Premium</div></div>
-                    </div>
-                    <div class="acc-right">
-                        <span class="list-badge badge-pending">Pending</span>
-                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                    </div>
-                </div>
-                <div class="acc-body"><div class="acc-inner">
-                    <div class="detail-grid">
-                        <div class="detail-field"><label>Full Name</label><p>Diddy Santos</p></div>
-                        <div class="detail-field"><label>Room</label><p>Room 311 — Premium</p></div>
-                        <div class="detail-field"><label>Contact Number</label><p>+63 918 765 4321</p></div>
-                        <div class="detail-field"><label>Email</label><p>diddy@email.com</p></div>
-                        <div class="detail-field"><label>Check-in</label><p>March 30, 2026 · 3:00 PM</p></div>
-                        <div class="detail-field"><label>Check-out</label><p>April 1, 2026 · 12:00 PM</p></div>
-                        <div class="detail-field"><label>Valid ID</label><p>Passport</p></div>
-                        <div class="detail-field"><label>Status</label><p style="color:#C2410C;font-weight:700;">Pending Arrival</p></div>
-                    </div>
-                    <div class="acc-actions">
-                        <button class="btn-ghost" onclick="toggleAcc('acc-diddy')">Close</button>
-                    </div>
-                </div></div>
+            <div class="form-row">
+                <div class="form-group"><label>First Name</label><input class="form-input" type="text" placeholder="Juan"></div>
+                <div class="form-group"><label>Last Name</label><input class="form-input" type="text" placeholder="Dela Cruz"></div>
             </div>
-
-            <div class="acc-item" id="acc-charlie">
-                <div class="acc-header" onclick="toggleAcc('acc-charlie')">
-                    <div class="acc-left">
-                        <div class="list-avatar av-teal">CL</div>
-                        <div><div class="list-name">Charlie Reyes</div><div class="list-meta">Room 105 · Regency</div></div>
-                    </div>
-                    <div class="acc-right">
-                        <span class="list-badge badge-occupied">Checked Out</span>
-                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                    </div>
-                </div>
-                <div class="acc-body"><div class="acc-inner">
-                    <div class="detail-grid">
-                        <div class="detail-field"><label>Full Name</label><p>Charlie Reyes</p></div>
-                        <div class="detail-field"><label>Room</label><p>Room 105 — Regency</p></div>
-                        <div class="detail-field"><label>Contact Number</label><p>+63 916 555 9988</p></div>
-                        <div class="detail-field"><label>Email</label><p>charlie@email.com</p></div>
-                        <div class="detail-field"><label>Check-in</label><p>March 27, 2026 · 1:00 PM</p></div>
-                        <div class="detail-field"><label>Check-out</label><p>March 28, 2026 · 11:00 AM</p></div>
-                        <div class="detail-field"><label>Valid ID</label><p>National ID</p></div>
-                        <div class="detail-field"><label>Status</label><p style="color:#DC2626;font-weight:700;">Checked Out</p></div>
-                    </div>
-                    <div class="acc-actions">
-                        <button class="btn-ghost" onclick="toggleAcc('acc-charlie')">Close</button>
-                    </div>
-                </div></div>
+            <div class="form-row">
+                <div class="form-group"><label>Contact Number</label><input class="form-input" type="text" placeholder="+63 9XX XXX XXXX"></div>
+                <div class="form-group"><label>Email</label><input class="form-input" type="email" placeholder="guest@email.com"></div>
             </div>
-
+            <div class="form-row">
+                <div class="form-group"><label>Room Assignment</label><input class="form-input" type="text" placeholder="e.g. Room 201"></div>
+                <div class="form-group"><label>Valid ID Type</label><input class="form-input" type="text" placeholder="e.g. Passport"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-ghost" onclick="closeModal('modal-add-guest')">Cancel</button>
+                <button class="btn-edit"><i class="fa-solid fa-plus"></i> Add Guest</button>
+            </div>
         </div>
     </div>
 
-    <!-- ══════════ BOOKINGS ══════════ -->
-    <?php elseif($page=='booking'): ?>
-    <div class="page-area">
-        <div class="booking-tabs-row">
-            <?php $tabs=['pending'=>'Pending','approve'=>'Approved','canceled'=>'Canceled','history'=>'History'];
-            foreach($tabs as $k=>$l): ?>
-            <a href="?page=booking&tab=<?=$k?>" class="b-tab <?= $booking_tab==$k?'active':'' ?>"><?=$l?></a>
-            <?php endforeach; ?>
-        </div>
-        <div class="section-title"><?= ucfirst($booking_tab) ?> Bookings</div>
-        <div class="list-stack">
-
-            <div class="acc-item" id="acc-bk1">
-                <div class="acc-header" onclick="toggleAcc('acc-bk1')">
-                    <div class="acc-left">
-                        <div class="list-avatar av-amber">BJ</div>
-                        <div><div class="list-name">Benjamin Cruz</div><div class="list-meta">Deluxe · Mar 28 – Mar 29</div></div>
-                    </div>
-                    <div class="acc-right">
-                        <span class="list-badge badge-<?= $booking_tab ?>"><?= ucfirst($booking_tab) ?></span>
-                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                    </div>
+    <!-- ══ MODAL: New Booking ══ -->
+    <div class="modal-overlay" id="modal-add-booking" onclick="closeOnOverlay(event,'modal-add-booking')">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">New Booking</div>
+                <button class="modal-close" onclick="closeModal('modal-add-booking')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Guest Name</label><input class="form-input" type="text" placeholder="Full name"></div>
+                <div class="form-group"><label>Room Type</label>
+                    <select class="form-input"><option>Regency</option><option>Deluxe</option><option>Premium</option></select>
                 </div>
-                <div class="acc-body"><div class="acc-inner">
-                    <div class="detail-grid">
-                        <div class="detail-field"><label>Guest Name</label><p>Benjamin Cruz</p></div>
-                        <div class="detail-field"><label>Booking No.</label><p>BK-2026-0041</p></div>
-                        <div class="detail-field"><label>Room Type</label><p>Deluxe — Room 204</p></div>
-                        <div class="detail-field"><label>Duration</label><p>1 night</p></div>
-                        <div class="detail-field"><label>Check-in</label><p>March 28, 2026 · 2:00 PM</p></div>
-                        <div class="detail-field"><label>Check-out</label><p>March 29, 2026 · 12:00 PM</p></div>
-                        <div class="detail-field"><label>Total Amount</label><p style="color:var(--red);font-weight:700;">₱3,500.00</p></div>
-                        <div class="detail-field"><label>Payment</label><p>Cash on arrival</p></div>
-                    </div>
-                    <div class="acc-actions">
-                        <button class="btn-ghost" onclick="toggleAcc('acc-bk1')">Close</button>
-                    </div>
-                </div></div>
             </div>
-
-            <div class="acc-item" id="acc-bk2">
-                <div class="acc-header" onclick="toggleAcc('acc-bk2')">
-                    <div class="acc-left">
-                        <div class="list-avatar av-slate">DD</div>
-                        <div><div class="list-name">Diddy Santos</div><div class="list-meta">Premium · Mar 30 – Apr 1</div></div>
-                    </div>
-                    <div class="acc-right">
-                        <span class="list-badge badge-<?= $booking_tab ?>"><?= ucfirst($booking_tab) ?></span>
-                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                    </div>
+            <div class="form-row">
+                <div class="form-group"><label>Check-in Date</label><input class="form-input" type="date"></div>
+                <div class="form-group"><label>Check-out Date</label><input class="form-input" type="date"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Payment Method</label>
+                    <select class="form-input"><option>Cash on arrival</option><option>GCash</option><option>Credit Card</option></select>
                 </div>
-                <div class="acc-body"><div class="acc-inner">
-                    <div class="detail-grid">
-                        <div class="detail-field"><label>Guest Name</label><p>Diddy Santos</p></div>
-                        <div class="detail-field"><label>Booking No.</label><p>BK-2026-0042</p></div>
-                        <div class="detail-field"><label>Room Type</label><p>Premium — Room 311</p></div>
-                        <div class="detail-field"><label>Duration</label><p>2 nights</p></div>
-                        <div class="detail-field"><label>Check-in</label><p>March 30, 2026 · 3:00 PM</p></div>
-                        <div class="detail-field"><label>Check-out</label><p>April 1, 2026 · 12:00 PM</p></div>
-                        <div class="detail-field"><label>Total Amount</label><p style="color:var(--red);font-weight:700;">₱10,000.00</p></div>
-                        <div class="detail-field"><label>Payment</label><p>GCash</p></div>
-                    </div>
-                    <div class="acc-actions">
-                        <button class="btn-ghost" onclick="toggleAcc('acc-bk2')">Close</button>
-                    </div>
-                </div></div>
+                <div class="form-group"><label>No. of Guests</label><input class="form-input" type="number" placeholder="1" min="1"></div>
             </div>
-
-            <div class="acc-item" id="acc-bk3">
-                <div class="acc-header" onclick="toggleAcc('acc-bk3')">
-                    <div class="acc-left">
-                        <div class="list-avatar av-teal">CL</div>
-                        <div><div class="list-name">Charlie Reyes</div><div class="list-meta">Regency · Apr 2 – Apr 3</div></div>
-                    </div>
-                    <div class="acc-right">
-                        <span class="list-badge badge-<?= $booking_tab ?>"><?= ucfirst($booking_tab) ?></span>
-                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                    </div>
-                </div>
-                <div class="acc-body"><div class="acc-inner">
-                    <div class="detail-grid">
-                        <div class="detail-field"><label>Guest Name</label><p>Charlie Reyes</p></div>
-                        <div class="detail-field"><label>Booking No.</label><p>BK-2026-0043</p></div>
-                        <div class="detail-field"><label>Room Type</label><p>Regency — Room 105</p></div>
-                        <div class="detail-field"><label>Duration</label><p>1 night</p></div>
-                        <div class="detail-field"><label>Check-in</label><p>April 2, 2026 · 2:00 PM</p></div>
-                        <div class="detail-field"><label>Check-out</label><p>April 3, 2026 · 12:00 PM</p></div>
-                        <div class="detail-field"><label>Total Amount</label><p style="color:var(--red);font-weight:700;">₱2,500.00</p></div>
-                        <div class="detail-field"><label>Payment</label><p>Credit Card</p></div>
-                    </div>
-                    <div class="acc-actions">
-                        <button class="btn-ghost" onclick="toggleAcc('acc-bk3')">Close</button>
-                    </div>
-                </div></div>
-            </div>
-
-        </div>
-    </div>
-    <?php endif; ?>
-
-</main>
-
-<!-- ══ MODAL: Edit Room ══ -->
-<div class="modal-overlay" id="modal-edit-room" onclick="closeOnOverlay(event,'modal-edit-room')">
-    <div class="modal">
-        <div class="modal-header">
-            <div class="modal-title">Edit Room</div>
-            <button class="modal-close" onclick="closeModal('modal-edit-room')"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="form-group"><label>Category Name</label><input class="form-input" id="er-name" type="text"></div>
-        <div class="form-row">
-            <div class="form-group"><label>Room Type</label><input class="form-input" id="er-type" type="text"></div>
-            <div class="form-group"><label>Rate (₱/hr)</label><input class="form-input" id="er-rate" type="text"></div>
-        </div>
-        <div class="form-row">
-            <div class="form-group"><label>Max Guests</label><input class="form-input" id="er-guests" type="number"></div>
-            <div class="form-group"><label>Bed Type</label><input class="form-input" id="er-bed" type="text"></div>
-        </div>
-        <div class="form-group"><label>Status</label>
-            <select class="form-input" id="er-status">
-                <option>Available</option><option>Occupied</option><option>Maintenance</option>
-            </select>
-        </div>
-        <div class="form-group"><label>Description</label><textarea class="form-input" id="er-desc"></textarea></div>
-        <div class="modal-footer">
-            <button class="btn-ghost" onclick="closeModal('modal-edit-room')">Cancel</button>
-            <button class="btn-edit" onclick="saveRoom()"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
-        </div>
-    </div>
-</div>
-
-<!-- ══ MODAL: Add Room ══ -->
-<div class="modal-overlay" id="modal-add-room" onclick="closeOnOverlay(event,'modal-add-room')">
-    <div class="modal">
-        <div class="modal-header">
-            <div class="modal-title">Add New Room</div>
-            <button class="modal-close" onclick="closeModal('modal-add-room')"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="form-group"><label>Category Name</label><input class="form-input" type="text" placeholder="e.g. Suite"></div>
-        <div class="form-row">
-            <div class="form-group"><label>Room Type</label><input class="form-input" type="text" placeholder="e.g. Penthouse"></div>
-            <div class="form-group"><label>Rate (₱/hr)</label><input class="form-input" type="text" placeholder="7500"></div>
-        </div>
-        <div class="form-row">
-            <div class="form-group"><label>Max Guests</label><input class="form-input" type="number" placeholder="2"></div>
-            <div class="form-group"><label>Bed Type</label><input class="form-input" type="text" placeholder="e.g. King Bed"></div>
-        </div>
-        <div class="form-group"><label>Description</label><textarea class="form-input" placeholder="Describe this room category..."></textarea></div>
-        <div class="modal-footer">
-            <button class="btn-ghost" onclick="closeModal('modal-add-room')">Cancel</button>
-            <button class="btn-edit"><i class="fa-solid fa-plus"></i> Add Room</button>
-        </div>
-    </div>
-</div>
-
-<!-- ══ MODAL: Add Guest ══ -->
-<div class="modal-overlay" id="modal-add-guest" onclick="closeOnOverlay(event,'modal-add-guest')">
-    <div class="modal">
-        <div class="modal-header">
-            <div class="modal-title">Add New Guest</div>
-            <button class="modal-close" onclick="closeModal('modal-add-guest')"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="form-row">
-            <div class="form-group"><label>First Name</label><input class="form-input" type="text" placeholder="Juan"></div>
-            <div class="form-group"><label>Last Name</label><input class="form-input" type="text" placeholder="Dela Cruz"></div>
-        </div>
-        <div class="form-row">
-            <div class="form-group"><label>Contact Number</label><input class="form-input" type="text" placeholder="+63 9XX XXX XXXX"></div>
-            <div class="form-group"><label>Email</label><input class="form-input" type="email" placeholder="guest@email.com"></div>
-        </div>
-        <div class="form-row">
-            <div class="form-group"><label>Room Assignment</label><input class="form-input" type="text" placeholder="e.g. Room 201"></div>
-            <div class="form-group"><label>Valid ID Type</label><input class="form-input" type="text" placeholder="e.g. Passport"></div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn-ghost" onclick="closeModal('modal-add-guest')">Cancel</button>
-            <button class="btn-edit"><i class="fa-solid fa-plus"></i> Add Guest</button>
-        </div>
-    </div>
-</div>
-
-<!-- ══ MODAL: New Booking ══ -->
-<div class="modal-overlay" id="modal-add-booking" onclick="closeOnOverlay(event,'modal-add-booking')">
-    <div class="modal">
-        <div class="modal-header">
-            <div class="modal-title">New Booking</div>
-            <button class="modal-close" onclick="closeModal('modal-add-booking')"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="form-row">
-            <div class="form-group"><label>Guest Name</label><input class="form-input" type="text" placeholder="Full name"></div>
-            <div class="form-group"><label>Room Type</label>
-                <select class="form-input"><option>Regency</option><option>Deluxe</option><option>Premium</option></select>
+            <div class="modal-footer">
+                <button class="btn-ghost" onclick="closeModal('modal-add-booking')">Cancel</button>
+                <button class="btn-edit"><i class="fa-solid fa-calendar-plus"></i> Create Booking</button>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group"><label>Check-in Date</label><input class="form-input" type="date"></div>
-            <div class="form-group"><label>Check-out Date</label><input class="form-input" type="date"></div>
-        </div>
-        <div class="form-row">
-            <div class="form-group"><label>Payment Method</label>
-                <select class="form-input"><option>Cash on arrival</option><option>GCash</option><option>Credit Card</option></select>
-            </div>
-            <div class="form-group"><label>No. of Guests</label><input class="form-input" type="number" placeholder="1" min="1"></div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn-ghost" onclick="closeModal('modal-add-booking')">Cancel</button>
-            <button class="btn-edit"><i class="fa-solid fa-calendar-plus"></i> Create Booking</button>
-        </div>
     </div>
-</div>
 
-<script>
-    function toggleAcc(id) {
-        const el = document.getElementById(id);
-        const isOpen = el.classList.contains('open');
-        el.closest('.list-stack').querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) el.classList.add('open');
-    }
+    <script>
+        function toggleAcc(id) {
+            const el = document.getElementById(id);
+            const isOpen = el.classList.contains('open');
+            el.closest('.list-stack').querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) el.classList.add('open');
+        }
 
-    function openModal(id) { document.getElementById(id).classList.add('show'); }
-    function closeModal(id) { document.getElementById(id).classList.remove('show'); }
-    function closeOnOverlay(e, id) { if (e.target === e.currentTarget) closeModal(id); }
+        function openModal(id) { document.getElementById(id).classList.add('show'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+        function closeOnOverlay(e, id) { if (e.target === e.currentTarget) closeModal(id); }
 
-    function openEditRoom(name, type, rate, guests, bed, status, desc) {
-        document.getElementById('er-name').value    = name;
-        document.getElementById('er-type').value    = type;
-        document.getElementById('er-rate').value    = rate;
-        document.getElementById('er-guests').value  = guests;
-        document.getElementById('er-bed').value     = bed;
-        document.getElementById('er-status').value  = status;
-        document.getElementById('er-desc').value    = desc;
-        openModal('modal-edit-room');
-    }
+        function openEditRoom(name, type, rate, guests, bed, status, desc) {
+            document.getElementById('er-name').value    = name;
+            document.getElementById('er-type').value    = type;
+            document.getElementById('er-rate').value    = rate;
+            document.getElementById('er-guests').value  = guests;
+            document.getElementById('er-bed').value     = bed;
+            document.getElementById('er-status').value  = status;
+            document.getElementById('er-desc').value    = desc;
+            openModal('modal-edit-room');
+        }
 
-    function saveRoom() {
-        // Wire to your PHP/AJAX endpoint here
-        closeModal('modal-edit-room');
-    }
+        function saveRoom() {
+            // Wire to your PHP/AJAX endpoint here
+            closeModal('modal-edit-room');
+        }
 
-    function markRead(el) {
-        el.classList.remove('unread');
-        el.querySelector('.ndot').classList.add('read');
-        const count = document.querySelectorAll('.notif-item.unread').length;
-        const badge = document.getElementById('notif-badge');
-        if (badge) badge.textContent = count > 0 ? count + ' new' : 'All read';
-    }
+        function markRead(el) {
+            el.classList.remove('unread');
+            el.querySelector('.ndot').classList.add('read');
+            const count = document.querySelectorAll('.notif-item.unread').length;
+            const badge = document.getElementById('notif-badge');
+            if (badge) badge.textContent = count > 0 ? count + ' new' : 'All read';
+        }
 
-    // Close modals on Escape key
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.show').forEach(m => m.classList.remove('show'));
-    });
-</script>
+        // Close modals on Escape key
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.show').forEach(m => m.classList.remove('show'));
+        });
+    </script>
 </body>
 </html>

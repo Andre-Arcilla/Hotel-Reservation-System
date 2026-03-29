@@ -106,6 +106,7 @@ function openMappedModal(displayName, mappedType) {
 
 function closeModal() {
     document.getElementById('bookingModal').style.display = 'none';
+    clearForm();
 }
 
 function clearForm() {
@@ -113,8 +114,13 @@ function clearForm() {
 }
 
 window.onclick = function(event) {
-    const modal = document.getElementById('bookingModal');
-    if (event.target == modal) {
+    const modal1 = document.getElementById('bookingModal');
+    if (event.target == modal1) {
         closeModal();
+    }
+
+    const modal2 = document.getElementById('receiptModal');
+    if (event.target == modal2) {
+        window.location.href='client.php';
     }
 }
