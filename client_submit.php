@@ -40,9 +40,9 @@
 
     // Data Matrix
     $rates = [
-        'Single' => ['Regency' => 100, 'Deluxe' => 300, 'Premium' => 500],
-        'Double' => ['Regency' => 200, 'Deluxe' => 500, 'Premium' => 800],
-        'Family' => ['Regency' => 500, 'Deluxe' => 750, 'Premium' => 1000],
+        'Single' => ['Regency' => 2500, 'Deluxe' => 3500, 'Premium' => 5000],
+        'Double' => ['Regency' => 3000, 'Deluxe' => 4000, 'Premium' => 5500],
+        'Family' => ['Regency' => 3000, 'Deluxe' => 5000, 'Premium' => 7000],
     ];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

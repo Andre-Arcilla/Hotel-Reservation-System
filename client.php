@@ -40,9 +40,9 @@
 
     // Data Matrix
     $rates = [
-        'Single' => ['Regency' => 100, 'Deluxe' => 300, 'Premium' => 500],
-        'Double' => ['Regency' => 200, 'Deluxe' => 500, 'Premium' => 800],
-        'Family' => ['Regency' => 500, 'Deluxe' => 750, 'Premium' => 1000],
+        'Single' => ['Regency' => 2500, 'Deluxe' => 3500, 'Premium' => 5000],
+        'Double' => ['Regency' => 3000, 'Deluxe' => 4000, 'Premium' => 5500],
+        'Family' => ['Regency' => 3000, 'Deluxe' => 5000, 'Premium' => 7000],
     ];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -190,7 +190,6 @@
                         <h3 class="top-label">REGENCY</h3>
                         <div class="room-content">
                             <h2 class="room-title">REGENCY</h2>
-                            <p>Mapped to: <strong>Regular</strong></p>
                             <p>Enjoy a fully air-conditioned stay featuring an LED TV with cable and in-house movies. This room is also equipped with a dining table, hot and cold bath, and a relaxing bathtub.</p>
                             <button class="price-btn" onclick="openMappedModal('Regency', 'Regency')">
                                 <span class="book-text">Select This Type</span>
@@ -203,7 +202,6 @@
                         <h3 class="top-label">DELUXE</h3>
                         <div class="room-content">
                             <h2 class="room-title">DELUXE</h2>
-                            <p>Mapped to: <strong>De Luxe</strong></p>
                             <p>The Deluxe Room offers spacious accommodation with all the essential amenities. It features air-conditioning, an LED TV with cable channels and in-house movies, plus a hot and cold shower.</p>
                             <button class="price-btn" onclick="openMappedModal('Deluxe', 'Deluxe')">
                                 <span class="book-text">Select This Type</span>
@@ -216,7 +214,6 @@
                         <h3 class="top-label">PREMIUM</h3>
                         <div class="room-content">
                             <h2 class="room-title">PREMIUM</h2>
-                            <p>Mapped to: <strong>Suite</strong></p>
                             <p>Perfect for travelers seeking a snug and cozy atmosphere. This room comes fully equipped with air-conditioning, an LED TV with cable channels and in-house movies, and a hot and cold shower.</p>
                             <button class="price-btn" onclick="openMappedModal('PREMIUM', 'Premium')">
                                 <span class="book-text">Select This Type</span>
@@ -273,7 +270,7 @@
                 <h2>Reservation: <span id="displayRoomName"></span></h2>
                 <p style="font-size: 0.9rem; color: #666;">Type: <span id="displayMappedType" style="font-weight:bold;"></span></p>
                 
-                <form id="bookingForm" action="submit_data.php" method="POST">
+                <form id="bookingForm" action="client_submit.php" method="POST">
                     <input type="hidden" id="hiddenRoomType" name="room_type">
 
                     <div class="form-group">
@@ -291,7 +288,7 @@
                             <option value="default" disabled selected>-- Select Capacity --</option>
                             <option value="Single">Single</option>
                             <option value="Double">Double</option>
-                            <option value="Family">Family</option>
+                            <option value="Family" id="option">Family</option>
                         </select>
                     </div>
 

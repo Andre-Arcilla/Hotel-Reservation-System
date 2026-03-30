@@ -94,6 +94,12 @@ function openMappedModal(displayName, mappedType) {
     
     // Update the HIDDEN input that PHP reads
     document.getElementById('hiddenRoomType').value = mappedType;
+
+    if (mappedType === 'Regency') {
+        document.getElementById('option').style.display = 'none';
+    } else {
+        document.getElementById('option').style.display = 'block';
+    }
     
     modal.style.display = 'block';
     
