@@ -38,7 +38,8 @@ CREATE TABLE `reservations` (
   `checkin_date` date NOT NULL DEFAULT current_timestamp(),
   `checkout_date` date NOT NULL DEFAULT current_timestamp(),
   `total_bill` decimal(10,2) NOT NULL DEFAULT 1000.00,
-  `mop` enum('Cash','Check','Credit Card') NOT NULL DEFAULT 'Cash'
+  `mop` enum('Cash','Check','Credit Card') NOT NULL DEFAULT 'Cash',
+  `status` enum('pending','approve','canceled') NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
